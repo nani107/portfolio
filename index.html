@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Enhanced Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-section {
+            height: 100vh;
+            background: linear-gradient(45deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: white;
+            display: flex;
+            align-items: center;
+            animation: gradientBG 15s ease infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.3;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .portfolio-item {
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .skill-progress {
+            height: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background: #1a2a6c;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .social-icon {
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.2);
+        }
+
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-icon {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            background: #1a2a6c;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-right: 1rem;
+        }
+
+        .timeline-content {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-content h5 {
+            color: #1a2a6c;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-particles" id="particles"></div>
+        <div class="container text-center position-relative">
+            <h1 class="display-3 fw-bold animate_animated animate_bounceIn">THIKKOLLA NARASIMHA RAJU</h1>
+            <p class="lead animate_animated animatefadeIn animate_delay-1s"> Software Developer | Full Stack Developer | Java Developer</p>
+            <a href="#portfolio" class="btn btn-light btn-lg mt-3 animate_animated animatefadeIn animate_delay-2s">Explore My Work</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+     <!-- About Section -->
+<section id="about" class="py-5" style="background: linear-gradient(to bottom, #1a2a6c, #fdbb2d); color: white;">
+    <div class="container">
+        <h2 class="text-center section-title" style="color: #ffffff;">About Me</h2>
+        <div class="row align-items-center">
+            <div class="col-md-5 text-center">
+                <div class="profile-img-wrapper">
+                    <img src="pic.jpg" class="img-fluid rounded-circle shadow-lg" alt="Profile" style="width: 250px; height: 250px; border: 5px solid #ffffff;">
+                </div>
+            </div>
+            <div class="col-md-7">
+                <p class="lead" style="font-size: 1.2rem; line-height: 1.8; text-align: justify;">
+                    Hello! I'm <strong>Thikkolla Narasimha Raju</strong>, a passionate and enthusiastic fresher in the field of web development. 
+                    I have a strong interest in learning and working with modern web technologies, and I am eager to contribute to innovative projects.
+                </p>
+                <p class="lead" style="font-size: 1.2rem; line-height: 1.8; text-align: justify;">
+                    My goal is to grow as a developer while creating impactful and user-friendly web applications. I am skilled in 
+                    <strong>HTML, CSS, JavaScript, Java, JSP, J2EE, SQL, Hibernate, and Spring Boot</strong>. I am committed to continuous learning 
+                    and improving my skills to stay updated with the latest trends in web development.
+                </p>
+                <div class="text-center mt-4">
+                    <a href="#contact" class="btn btn-light btn-lg">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+   
+
+
+    <!-- Education Section -->
+<section id="education" class="py-5" style="background: linear-gradient(to right, #fdbb2d, #1a2a6c); color: white;">
+    <div class="container">
+        <h2 class="text-center section-title" style="color: #ffffff;">Education</h2>
+        <div class="timeline">
+            <!-- Bachelor's Degree -->
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="timeline-content">
+                    <h5 class="fw-bold">Bachelor of Technology in Electronics and Communication Engineering</h5>
+                    <p><strong>Institution:</strong> Sri Venkateswara University College of Engineering, Tirupati</p>
+                    <p><strong>Year:</strong> Nov 2021 – May 2025</p>
+                    <p><strong>GPA:</strong> 7.6/10</p>
+                    <p><strong>Branch:</strong> Electronics and Communication Engineering</p>
+                    <p><strong>Internship:</strong> Completed an internship during the course duration.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .timeline {
+        position: relative;
+        padding: 2rem 0;
+    }
+
+    .timeline-item {
+        display: flex;
+        margin-bottom: 2rem;
+    }
+
+    .timeline-icon {
+        flex-shrink: 0;
+        width: 50px;
+        height: 50px;
+        background: #1a2a6c;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        margin-right: 1rem;
+    }
+
+    .timeline-content {
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        color: black; /* Ensure text is visible on white background */
+        width: 100%; /* Ensure it takes up available space */
+    }
+
+    .timeline-content h5 {
+        color: #1a2a6c;
+        margin-bottom: 1rem;
+    }
+
+    .timeline-content p {
+        margin-bottom: 0.5rem;
+    }
+</style>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-5" style="background: linear-gradient(to right, #1a2a6c, #b21f1f); color: white;">
+        <div class="container">
+            <h2 class="text-center section-title" style="color: #fdbb2d;">My Skills</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="skill-item">
+                        <h5>HTML/CSS</h5>
+                        <div class="progress skill-progress">
+                            <div class="progress-bar bg-primary" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <h5>JavaScript</h5>
+                        <div class="progress skill-progress">
+                            <div class="progress-bar bg-success" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <h5>Java</h5>
+                        <div class="progress skill-progress">
+                            <div class="progress-bar bg-info" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <h5>JSP</h5>
+                        <div class="progress skill-progress">
+                            <div class="progress-bar bg-warning" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <h5>J2EE</h5>
+                        <div class="progress skill-progress">
+                            <div class="progress-bar bg-dark" style="width: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="skill-item">
+                        <h5>JDBC</h5>
+                        <div class="progress skill-progress">
+                            <div class="progress-bar bg-danger" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <h5>SQL</h5>
+                        <div class="progress skill-progress">
+                            <div class="progress-bar bg-primary" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <h5>Bootstrap</h5>
+                        <div class="progress skill-progress">
+                            <div class="progress-bar bg-success" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <h5>Hibernate</h5>
+                        <div class="progress skill-progress">
+                            <div class="progress-bar bg-info" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <h5>Spring Boot</h5>
+                        <div class="progress skill-progress">
+                            <div class="progress-bar bg-warning" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-5" style="background: linear-gradient(to right, #fdbb2d, #1a2a6c); color: white;">
+        <div class="container">
+            <h2 class="text-center section-title" style="color: #ffffff;">Projects</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card portfolio-item">
+                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Tic Tac Toe Game">
+                        <div class="card-body">
+                            <h5 class="card-title">Tic Tac Toe Game</h5>
+                            <p class="card-text">A simple and interactive Tic Tac Toe game built using Java and Swing.</p>
+                            <a href="#" class="btn btn-outline-light btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card portfolio-item">
+                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Food Delivery Website">
+                        <div class="card-body">
+                            <h5 class="card-title">Food Delivery Website</h5>
+                            <p class="card-text">A responsive food delivery website built using HTML, CSS, JavaScript, and Bootstrap.</p>
+                            <a href="#" class="btn btn-outline-light btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card portfolio-item">
+                        <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Cancer Detection AI Model">
+                        <div class="card-body">
+                            <h5 class="card-title">Cancer Detection AI Model</h5>
+                            <p class="card-text">An AI model using deep learning to detect cancer from X-ray images.</p>
+                            <a href="#" class="btn btn-outline-light btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5" style="background: linear-gradient(to right, #1a2a6c, #b21f1f); color: white;">
+        <div class="container">
+            <h2 class="text-center section-title" style="color: #fdbb2d;">Get in Touch</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-warning w-100">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <div class="social-links mb-3">
+                <a href="#" class="social-icon text-white"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon text-white"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-icon text-white"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-icon text-white"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>© 2025 My Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Particles.js initialization
+        particlesJS('particles', {
+            particles: {
+                number: { value: 80 },
+                color: { value: '#ffffff' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5 },
+                size: { value: 3 },
+                move: { enable: true, speed: 2 }
+            },
+            interactivity: {
+                events: {
+                    onhover: { enable: true, mode: 'repulse' }
+                }
+            }
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Message sent successfully!');
+            e.target.reset();
+        });
+    </script>
+</body>
+</html>
